@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "awsgraphqlapi-dev-20191016191305-authRole",
+            "UnauthRoleArn": "arn:aws:iam::290738469989:role/awsgraphqlapi-dev-20191016191305-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::290738469989:role/awsgraphqlapi-dev-20191016191305-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "awsgraphqlapi-dev-20191016191305-deployment",
+            "UnauthRoleName": "awsgraphqlapi-dev-20191016191305-unauthRole",
+            "StackName": "awsgraphqlapi-dev-20191016191305",
+            "StackId": "arn:aws:cloudformation:us-east-1:290738469989:stack/awsgraphqlapi-dev-20191016191305/e4726130-f072-11e9-8c89-0ad4d2e93658"
+        }
+    }
+}
