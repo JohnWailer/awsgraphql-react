@@ -1,0 +1,19 @@
+type Post @model {
+    id: ID!
+    title: String!
+    body:String!
+    createdAt:String!
+}
+
+
+type UberService @model {
+  id: ID!
+  url: String
+  name_driver: String
+  car_model: String
+  start_city: String
+  latitude: String
+  longitude: String
+  currency_code: String
+  rate: String
+}

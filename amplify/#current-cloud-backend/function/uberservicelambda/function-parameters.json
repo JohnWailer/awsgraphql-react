@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "api": {
+            "awsgraphqlapi": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

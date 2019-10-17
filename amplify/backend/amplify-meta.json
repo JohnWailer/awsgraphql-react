@@ -1,0 +1,110 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "awsgraphqlapi-dev-20191016191305-authRole",
+			"UnauthRoleArn": "arn:aws:iam::290738469989:role/awsgraphqlapi-dev-20191016191305-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::290738469989:role/awsgraphqlapi-dev-20191016191305-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "awsgraphqlapi-dev-20191016191305-deployment",
+			"UnauthRoleName": "awsgraphqlapi-dev-20191016191305-unauthRole",
+			"StackName": "awsgraphqlapi-dev-20191016191305",
+			"StackId": "arn:aws:cloudformation:us-east-1:290738469989:stack/awsgraphqlapi-dev-20191016191305/e4726130-f072-11e9-8c89-0ad4d2e93658"
+		}
+	},
+	"api": {
+		"awsgraphqlapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "",
+							"apiKeyExpirationDays": "365"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "m4wtzyjemrfi7lulg65mnb5w2q",
+				"GraphQLAPIEndpointOutput": "https://f2bsmwivwfe6dkmv2cyp4a2lvq.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-zvvbfycdfjadnapqr5d4jnrzxi"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiawsgraphqlapi"
+			},
+			"lastPushTimeStamp": "2019-10-17T02:17:22.420Z",
+			"lastPushDirHash": "SWSsFx3CNy2qlxNNQfnBpylbuuQ="
+		}
+	},
+	"function": {
+		"uberservicelambda": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "api",
+					"resourceName": "awsgraphqlapi",
+					"attributes": [
+						"GraphQLAPIIdOutput",
+						"GraphQLAPIEndpointOutput"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-10-17T01:55:08.301Z",
+			"lastPackageTimeStamp": "2019-10-17T01:55:08.361Z",
+			"distZipFilename": "uberservicelambda-395170726d4d47676a49-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/function/uberservicelambda-cloudformation-template.json",
+				"logicalId": "functionuberservicelambda"
+			},
+			"lastPushTimeStamp": "2019-10-17T02:17:22.423Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:290738469989:function:uberservicelambda-dev",
+				"Name": "uberservicelambda-dev",
+				"LambdaExecutionRole": "awsgraphqlapiLambdaRole7ef4f0ce-dev"
+			},
+			"lastPushDirHash": "R+xluo0y8yi9F5gawoj23yTsXCA="
+		},
+		"rnuberservicerestapi": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "api",
+					"resourceName": "awsgraphqlapi",
+					"attributes": [
+						"GraphQLAPIIdOutput",
+						"GraphQLAPIEndpointOutput"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "uberservicelambda",
+					"attributes": [
+						"Name"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-10-17T02:15:37.678Z",
+			"lastPackageTimeStamp": "2019-10-17T02:15:38.792Z",
+			"distZipFilename": "rnuberservicerestapi-653045676a484a797468-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/function/rnuberservicerestapi-cloudformation-template.json",
+				"logicalId": "functionrnuberservicerestapi"
+			},
+			"lastPushTimeStamp": "2019-10-17T02:17:22.426Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:290738469989:function:uberservicerestapi-dev",
+				"Name": "uberservicerestapi-dev",
+				"LambdaExecutionRole": "awsgraphqlapiLambdaRole57da3667-dev"
+			},
+			"lastPushDirHash": "55UywK8UoUtsWfHimSrm6IoDnpg="
+		}
+	}
+}
