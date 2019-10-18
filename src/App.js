@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import { withAuthenticator } from 'aws-amplify-react';
 import CreatePost from './createPost';
-import logo from './logo.svg';
+import Map from './components/Map.js'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CreatePost />
+        <Map />
       </div>
     );
   }
 }
 
-export default App;
+export default withAuthenticator(App,false);
