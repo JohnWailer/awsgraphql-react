@@ -34,8 +34,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiawsgraphqlapi"
 			},
-			"lastPushTimeStamp": "2019-10-17T02:17:22.420Z",
-			"lastPushDirHash": "SWSsFx3CNy2qlxNNQfnBpylbuuQ="
+			"lastPushTimeStamp": "2019-10-18T00:19:49.157Z",
+			"lastPushDirHash": "TWmGeDkVqDhOl86ihLM1t87ZV0E="
 		}
 	},
 	"function": {
@@ -60,7 +60,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/function/uberservicelambda-cloudformation-template.json",
 				"logicalId": "functionuberservicelambda"
 			},
-			"lastPushTimeStamp": "2019-10-17T02:17:22.423Z",
+			"lastPushTimeStamp": "2019-10-18T00:19:48.833Z",
 			"output": {
 				"Region": "us-east-1",
 				"Arn": "arn:aws:lambda:us-east-1:290738469989:function:uberservicelambda-dev",
@@ -91,20 +91,27 @@
 				}
 			],
 			"lastBuildTimeStamp": "2019-10-17T02:15:37.678Z",
-			"lastPackageTimeStamp": "2019-10-17T02:15:38.792Z",
-			"distZipFilename": "rnuberservicerestapi-653045676a484a797468-build.zip",
+			"lastPackageTimeStamp": "2019-10-18T00:16:31.749Z",
+			"distZipFilename": "rnuberservicerestapi-382b36334f77372b6e57-build.zip",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/awsgraphqlapi-dev-20191016191305-deployment/amplify-cfn-templates/function/rnuberservicerestapi-cloudformation-template.json",
 				"logicalId": "functionrnuberservicerestapi"
 			},
-			"lastPushTimeStamp": "2019-10-17T02:17:22.426Z",
+			"lastPushTimeStamp": "2019-10-18T00:19:49.157Z",
 			"output": {
 				"Region": "us-east-1",
 				"Arn": "arn:aws:lambda:us-east-1:290738469989:function:uberservicerestapi-dev",
 				"Name": "uberservicerestapi-dev",
 				"LambdaExecutionRole": "awsgraphqlapiLambdaRole57da3667-dev"
 			},
-			"lastPushDirHash": "55UywK8UoUtsWfHimSrm6IoDnpg="
+			"lastPushDirHash": "qdn7skUEqkOc8GxLEk95ymW9p2U="
+		}
+	},
+	"auth": {
+		"awsgraphqlapi87e2f7e1": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
 		}
 	}
 }

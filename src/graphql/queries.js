@@ -1,6 +1,20 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getUberServiceRestApi = `query GetUberServiceRestApi($id: ID!) {
+  getUberServiceRestApi(id: $id) {
+    id
+    url
+    name_driver
+    car_model
+    start_city
+    latitude
+    longitude
+    currency_code
+    rate
+  }
+}
+`;
 export const getPost = `query GetPost($id: ID!) {
   getPost(id: $id) {
     id

@@ -2,15 +2,16 @@ const awsServerlessExpress = require('aws-serverless-express');
 const app = require('./app');
 //const uberreq =
 
-const server = awsServerlessExpress.createServer(app);
-console.log('MKKKK');
-//console.log(app.uberreq());
-//console.log(app);
-//console.log(app.uberreq());
-console.log(app.starreq());
 
+// lambda name = uberservicerestapi
+
+const server = awsServerlessExpress.createServer(app);
+console.log(app.starreq());
 
 exports.handler = (event, context) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
+  console.log(`EVENT: ${JSON.stringify(event.arguments.msg)}`);
+  var uberservice = app.uberreq();
+  console.log(uberservice);
   awsServerlessExpress.proxy(server, event, context);
 };

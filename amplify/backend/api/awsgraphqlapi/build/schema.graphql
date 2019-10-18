@@ -17,6 +17,14 @@ type UberService {
   rate: String
 }
 
+type Query {
+  getUberServiceRestApi(id: ID!): UberService
+  getPost(id: ID!): Post
+  listPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection
+  getUberService(id: ID!): UberService
+  listUberServices(filter: ModelUberServiceFilterInput, limit: Int, nextToken: String): ModelUberServiceConnection
+}
+
 enum ModelSortDirection {
   ASC
   DESC
@@ -90,13 +98,6 @@ input ModelPostFilterInput {
   and: [ModelPostFilterInput]
   or: [ModelPostFilterInput]
   not: ModelPostFilterInput
-}
-
-type Query {
-  getPost(id: ID!): Post
-  listPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection
-  getUberService(id: ID!): UberService
-  listUberServices(filter: ModelUberServiceFilterInput, limit: Int, nextToken: String): ModelUberServiceConnection
 }
 
 input CreatePostInput {

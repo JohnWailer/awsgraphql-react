@@ -55,5 +55,12 @@
 				}
 			]
 		}
+	},
+	"auth": {
+		"awsgraphqlapi87e2f7e1": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
 	}
 }

@@ -9,6 +9,11 @@
             "UnauthRoleName": "awsgraphqlapi-dev-20191016191305-unauthRole",
             "StackName": "awsgraphqlapi-dev-20191016191305",
             "StackId": "arn:aws:cloudformation:us-east-1:290738469989:stack/awsgraphqlapi-dev-20191016191305/e4726130-f072-11e9-8c89-0ad4d2e93658"
+        },
+        "categories": {
+            "auth": {
+                "awsgraphqlapi87e2f7e1": {}
+            }
         }
     }
 }

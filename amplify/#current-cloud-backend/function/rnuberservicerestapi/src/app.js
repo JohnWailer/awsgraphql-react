@@ -37,7 +37,27 @@ app.use(function(req, res, next) {
 /**********************
  * Example get method *
  **********************/
-
+var starreq = function () {
+  try {
+    app.get('/starwars', function(req, res) {
+    axios.get('https://swapi.co/api/people/')
+      .then(response => {
+        res.json({
+          success: true,
+          people: response.data.results
+        })
+      })
+      .catch(error => {
+        res.json({
+          success: false,
+          error
+        })
+      })
+    });
+  } catch (e) {
+    return undefined;
+  }
+};
   app.get('/starwars', function(req, res) {
   axios.get('https://swapi.co/api/people/')
     .then(response => {
@@ -54,6 +74,38 @@ app.use(function(req, res, next) {
     })
   });
 
+var uberreq = function () {
+
+  try {
+    app.get('/uber', function(req, res) {
+    axios.get('http://darojas.pythonanywhere.com/api/uber-service/')
+      .then(response => {
+        res.json({
+
+          success: true,
+          //people: response.data.results
+          people: response.data
+        })
+        console.log('Response: ', response);
+        //return people;
+        //var msg = 'OK';
+        //return people;
+        //return msg;
+
+      })
+      .catch(error => {
+        res.json({
+          success: false,
+          error
+        })
+      })
+    })
+  } catch (e) {
+    var msg = 'failed';
+    return msg;
+  }
+};
+
   app.get('/uber', function(req, res) {
   axios.get('http://darojas.pythonanywhere.com/api/uber-service/')
     .then(response => {
@@ -64,6 +116,8 @@ app.use(function(req, res, next) {
         people: response.data
       })
       console.log('Response: ', response);
+      return people;
+      debugger;
     })
     .catch(error => {
       res.json({
@@ -126,10 +180,14 @@ app.delete('/items/*', function(req, res) {
 });
 
 app.listen(3000, function() {
-    console.log("App started")
+    console.log("App started");
 });
 
 // Export the app object. When executing the application local this does nothing. However,
 // to port it to AWS Lambda we will create a wrapper around that will load the app from
 // this file
-module.exports = app
+module.exports = {
+    app,
+    uberreq,
+    starreq
+};

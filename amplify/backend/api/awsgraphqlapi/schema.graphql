@@ -17,3 +17,7 @@ type UberService @model {
   currency_code: String
   rate: String
 }
+
+type Query {
+  getUberServiceRestApi(id: ID!): UberService @function(name: "uberservicerestapi-${env}")
+}

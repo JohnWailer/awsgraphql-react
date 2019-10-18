@@ -84,7 +84,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "awsgraphqlapi-dev-20191016191305-deployment",
-					"S3Key": "amplify-builds/rnuberservicerestapi-653045676a484a797468-build.zip"
+					"S3Key": "amplify-builds/rnuberservicerestapi-382b36334f77372b6e57-build.zip"
 				}
 			}
 		},
